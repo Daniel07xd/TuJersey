@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("conexion.php");
 $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
@@ -7,7 +8,11 @@ $sql = "SELECT * FROM usuarios
         AND contrasena='$contrasena'";
 $resultado = $conn->query($sql);
 if ($resultado->num_rows > 0) {
-    header("Location: Inicio.html");
+    $usuario = $resultado->fetch_assoc();
+    $_SESSION['id_usuario'] = $usuario['id_usuario'];
+    $_SESSION['nombre'] = $usuario['nombre'];
+    $_SESSION['rol'] = $usuario['rol'];
+    header("Location: Inicio.php");
 } else {
     echo "
     <script>
