@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar cuenta</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <p class="p-3">
+        <a href="Inicio.html" class="text-decoration-underline fw-bold text-dark">
+            Regresar a la página de inicio
+        </a>
+    </p>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="card shadow p-4 border-0 login-card">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Crear cuenta</h2>
+                <p class="text-muted">
+                    Registrate en Tu Jersey
+                </p>
+            </div>
+            <form action="Crear_sesion.php" method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Nombre
+                    </label>
+                    <input type="text"
+                        name="nombre"
+                        class="form-control"
+                        placeholder="Ingresar nombre"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Apellido paterno
+                    </label>
+                    <input type="text"
+                        name="apellido_paterno"
+                        class="form-control"
+                        placeholder="Ingresar apellido paterno"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Apellido materno
+                    </label>
+                    <input type="text"
+                        name="apellido_materno"
+                        class="form-control"
+                        placeholder="Ingresar apellido materno"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Correo electrónico
+                    </label>
+                    <input type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Ingresar correo"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">
+                        Contraseña
+                    </label>
+                    <input type="password"
+                        name="contrasena"
+                        class="form-control"
+                        placeholder="Ingresar contraseña"
+                        required>
+                </div>
+                <div class="d-grid mt-4">
+                    <button type="submit"
+                        class="btn btn-dark btn-lg">
+                        Registrarse
+                    </button>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0">
+                        ¿Ya tienes cuenta?
+                        <a href="Iniciar_sesion.html" class="text-decoration-underline fw-bold text-dark">
+                            Iniciar sesión
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
