@@ -1,0 +1,137 @@
+:root {
+    --bg-body: #f4f4f4;
+    --bg-nav: #000000;
+    --text-main: #1a1a1a;
+    --text-nav: #ffffff;
+    --shadow-card: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    color: var(--text-main);
+}
+
+nav.navbar.bg-success {
+    background-color: var(--bg-nav) !important; 
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: var(--text-nav) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--text-nav) !important;
+    opacity: 1;
+}
+
+h2 {
+    font-weight: 300;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+}
+
+#carouselExample {
+    background: white;
+    padding: 30px;
+    border-radius: 4px; 
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 480px; 
+}
+
+.carousel-inner img {
+    object-fit: contain !important; 
+    height: 350px; 
+    width: 100%;
+    background-color: white; 
+}
+
+.carousel-item h5 {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+    text-transform: none; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+@media (max-width: 768px) {
+    #carouselExample {
+        max-width: 95%;
+        padding: 15px;
+    }
+    .carousel-inner img {
+        height: 280px; 
+    }
+}
+
+.catalogo {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: var(--shadow-card);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.catalogo thead {
+    background-color: #000;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.catalogo th {
+    padding: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.catalogo td {
+    padding: 18px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.catalogo tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: 0.2s ease;
+}
+
+.catalogo tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.catalogo img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #fff;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
