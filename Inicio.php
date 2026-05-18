@@ -16,25 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand fw-bold">Tu Jersey</a>
-            <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Inicio.php">Inicio</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Catalogo.php">Catálogo</a></li>
-                    <?php if(isset($_SESSION['id_usuario'])){ ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Carrito.php">Carrito</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Historial.php">Historial</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Cerrar_sesion.php" id="cerrarSesion">Cerrar sesión</a></li>
-                    <?php } else { ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Iniciar_sesion.html">Iniciar sesión</a></li>
-                    <?php } ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="">Sobre nosotros</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("navbar.php"); ?>
     
     <div class="text-center align-items-center p-3">
         <h2>Algunos de nuestros productos:</h2>

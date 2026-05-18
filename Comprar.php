@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("conexion.php");
+if(!isset($_SESSION['id_usuario'])){
+    header("Location: Inicio.php");
+    exit();
+}
 $id_usuario = $_SESSION['id_usuario'];
 $sqlCarrito = "SELECT *
                FROM carritos

@@ -1,7 +1,10 @@
 <?php
 session_start();
 include("conexion.php");
-
+if(!isset($_SESSION['id_usuario'])){
+    header("Location: Inicio.php");
+    exit();
+}
 $id_orden = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -45,9 +48,16 @@ while($row = $res->fetch_assoc()){
     ";
 }
 ?>
+<?php
+if($_SESSION['rol'] == 'admin'){
+    $volver = "Ventas.php";
+} else {
+    $volver = "Historial.php";
+}
+?>
         </tbody>
     </table>
-    <a href="Historial.php" class="btn btn-dark">Volver</a>
+    <a href="<?php echo $volver; ?>" class="btn btn-dark">Volver</a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="JS/Funciones.js"></script>

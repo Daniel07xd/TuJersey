@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("conexion.php");
+if(!isset($_SESSION['id_usuario'])){
+    header("Location: Inicio.php");
+    exit();
+}
 $id_item = $_POST['id_item'];
 $sql = "DELETE FROM carrito_items
         WHERE id_item = '$id_item'";

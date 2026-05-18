@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("conexion.php");
+if(!isset($_SESSION['id_usuario'])){
+    header("Location: Inicio.php");
+    exit();
+}
 $id_usuario = $_SESSION['id_usuario'];
 ?>
 <!DOCTYPE html>
@@ -14,25 +18,7 @@ $id_usuario = $_SESSION['id_usuario'];
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container">
-            <a class="navbar-brand fw-bold">Tu Jersey</a>
-            <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Inicio.php">Inicio</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Catalogo.php">Catálogo</a></li>
-                    <?php if(isset($_SESSION['id_usuario'])){ ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Carrito.php">Carrito</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Historial.php">Historial</a></li>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Cerrar_sesion.php" id="cerrarSesion">Cerrar sesión</a></li>
-                    <?php } else { ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="Iniciar_sesion.html">Iniciar sesión</a></li>
-                    <?php } ?>
-                    <li class="nav-item fw-bold"><a class="nav-link" href="">Sobre nosotros</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("navbar.php"); ?>
 
     <div class="container mt-5">
         <h1 class="p-3">Mis compras</h1>
@@ -61,10 +47,7 @@ while($row = $res->fetch_assoc()){
         <td>\${$row['total']}</td>
         <td>{$row['estado']}</td>
         <td>
-            <a href='Orden_detalle.php?id={$row['id_orden']}'
-               class='btn btn-primary btn-sm'>
-               Ver
-            </a>
+            <a href='Orden_detalle.php?id={$row['id_orden']}' class='btn btn-primary btn-sm'>Ver</a>
         </td>
     </tr>
     ";
